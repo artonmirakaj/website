@@ -1,0 +1,20 @@
+
+{% extends 'music/base.html' %}
+
+{% block body %}
+
+    <ul>
+        {% for album in all_albums %}
+            <li><a href="{% url 'music:detail' album.id %}">{{ album.album_title }}</a> </li>
+        {% endfor %}
+    </ul>
+
+    <a href="www.facebook.com" class="fa fa-facebook">Facebook</a><br>
+
+    <a href="www.instagram.com">Instagram</a><br>
+
+    <a href="www.twitter.com" class="fa fa-twitter">Twitter</a><br>
+
+    <a href="www.linkedin.com">Linkedin</a><br>
+
+{% endblock %}

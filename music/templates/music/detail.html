@@ -1,0 +1,27 @@
+
+{% extends 'music/base.html' %}
+
+{% block title %}Album Details{% endblock %}
+
+{% block body %}
+
+    <!-- displays album artwork -->
+    <img src="{{ album.album_logo }}">
+
+    <!-- displays album title and artist on page -->
+    <h1>{{ album.album_title}}</h1>
+    <h3>{{ album.artist }}</h3>
+
+    <!-- loop through all the songs
+        if song is favorite, star it
+    -->
+
+    {% for song in album.song_set.all %}
+        {{ song.song_title }}
+        {% if song.is_favorite %}
+            <img src="http://i.imgur.com/b9b13Rd.png" />
+        {% endif %}
+        <br>
+    {% endfor %}
+
+{% endblock %}
